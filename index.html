@@ -15,9 +15,7 @@
                 <div class="timeCls">2023年07月20日 16:06:00</div>
            </div>
            <div class="table_underline"></div>
-           <div class="table_content">
-                
-           </div>
+           <div class="table_content"></div>
            <p id = "loadevent"></p>
            <div class="table_label">
                 <div><img src="image/pass.png" alt=""> <div>完成待办</div></div>
@@ -36,18 +34,28 @@
                 document.querySelector('.text1').innerText = ''
                 document.querySelector('.text2').innerText = '完成待办'
             })
-            let fn = (inx) => {
-                if(inx < 10) {
-                    document.querySelector('.titles').innerHTML = titleStr.substring(0, inx)
+            let fn = (inx, index, type) => {
+                if(inx < index) {
+                    if(type == '1') {
+                        document.querySelector('.titles').innerHTML = titleStr.substring(0, inx)
+                    }else {
+                        let img = document.createElement('img')
+                        img.src = `image/${inx}.jpeg`
+                        document.querySelector('.table_content').appendChild(img)
+                    }
                     setTimeout(() => {
-                        fn(++inx)
+                        fn(++inx, index, type)
                     }, 200)
                 }
             }
-            fn(0)
+            for(let i = 1; i < 3; i++) {
+                if(i == '1') {
+                    fn(1, 11, i)
+                }else {
+                    fn(1, 6, i)
+                }
+            } 
         }
-
-        
     </script>
 </body>
 </html>
