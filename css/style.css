@@ -52,3 +52,28 @@
     width: 20px;
     margin-bottom: -4px;
 }
+/* 定义一个 keyframe 动画 */
+@keyframes fly-in-left {
+from {
+    transform: translateX(-100%);
+}
+to {
+    transform: translateX(0%);
+}
+}
+.table_title > .titles {
+    color: #f77f94;
+    animation-name: fly-in-left;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+}
+.table_title > .timeCls {
+    font-size: 16px; 
+    color: pink; 
+    margin-top: 5px; 
+    animation-name: fly-in-left;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-fill-mode: forwards;
+}
