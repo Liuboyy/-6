@@ -46,6 +46,12 @@
                     setTimeout(() => {
                         fn(++inx, index, type)
                     }, 200)
+                }else {
+                    if(type == '1') {
+                        let audio = document.createElement('audio')
+                        audio.src = 'image/zz.wav'
+                        audio.play();
+                    }
                 }
             }
             for(let i = 1; i < 3; i++) {
